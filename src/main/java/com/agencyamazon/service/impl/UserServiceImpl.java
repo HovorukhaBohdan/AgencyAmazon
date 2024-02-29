@@ -1,7 +1,7 @@
 package com.agencyamazon.service.impl;
 
-import com.agencyamazon.dto.UserRegistrationRequestDto;
-import com.agencyamazon.dto.UserResponseDto;
+import com.agencyamazon.dto.internal.UserRegistrationRequestDto;
+import com.agencyamazon.dto.internal.UserResponseDto;
 import com.agencyamazon.exception.RegistrationException;
 import com.agencyamazon.mapper.UserMapper;
 import com.agencyamazon.model.Role;

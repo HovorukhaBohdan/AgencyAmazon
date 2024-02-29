@@ -1,8 +1,8 @@
 package com.agencyamazon.mapper;
 
 import com.agencyamazon.config.MapperConfig;
-import com.agencyamazon.dto.UserRegistrationRequestDto;
-import com.agencyamazon.dto.UserResponseDto;
+import com.agencyamazon.dto.internal.UserRegistrationRequestDto;
+import com.agencyamazon.dto.internal.UserResponseDto;
 import com.agencyamazon.model.User;
 import org.mapstruct.Mapper;
 
