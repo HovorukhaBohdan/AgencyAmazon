@@ -1,6 +1,6 @@
 package com.agencyamazon.validation;
 
-import com.agencyamazon.dto.UserRegistrationRequestDto;
+import com.agencyamazon.dto.internal.UserRegistrationRequestDto;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import java.util.Objects;

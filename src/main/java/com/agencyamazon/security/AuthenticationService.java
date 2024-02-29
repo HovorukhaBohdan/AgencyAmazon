@@ -1,7 +1,7 @@
 package com.agencyamazon.security;
 
-import com.agencyamazon.dto.UserLoginRequestDto;
-import com.agencyamazon.dto.UserLoginResponseDto;
+import com.agencyamazon.dto.internal.UserLoginRequestDto;
+import com.agencyamazon.dto.internal.UserLoginResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

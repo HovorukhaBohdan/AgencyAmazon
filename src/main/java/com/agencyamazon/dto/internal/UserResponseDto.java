@@ -1,4 +1,4 @@
-package com.agencyamazon.dto;
+package com.agencyamazon.dto.internal;
 
 import lombok.Data;
 
