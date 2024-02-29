@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.domain.Pageable;
 
 public interface DateReportService {
-    SalesAndTrafficByDateDto getByDate(LocalDate date);
+    List<SalesAndTrafficByDateDto> getByDate(LocalDate date);
 
     List<SalesAndTrafficByDateDto> getByDateBetween(LocalDate dateFrom, LocalDate dateTo);
 

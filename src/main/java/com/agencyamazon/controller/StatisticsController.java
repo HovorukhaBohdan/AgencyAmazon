@@ -25,16 +25,14 @@ public class StatisticsController {
     private final DateReportService dateReportService;
     private final AsinReportService asinReportsService;
 
-    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("/by-date")
     @Operation(summary = "Get report by specified date")
-    public SalesAndTrafficByDateDto getReportByDate(
+    public List<SalesAndTrafficByDateDto> getReportByDate(
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date
     ) {
         return dateReportService.getByDate(date);
     }
 
-    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("/by-date-between")
     @Operation(summary = "Get reports for certain period of time")
     public List<SalesAndTrafficByDateDto> getAllReportsByDateBetween(
@@ -46,7 +44,6 @@ public class StatisticsController {
         return dateReportService.getByDateBetween(dateFrom, dateTo);
     }
 
-    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("/by-all-dates")
     @Operation(summary = "Get all reports by date")
     public List<SalesAndTrafficByDateDto> getAllReportsByAllDates(
