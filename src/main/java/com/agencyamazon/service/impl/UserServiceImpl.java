@@ -4,17 +4,24 @@ import com.agencyamazon.dto.UserRegistrationRequestDto;
 import com.agencyamazon.dto.UserResponseDto;
 import com.agencyamazon.exception.RegistrationException;
 import com.agencyamazon.mapper.UserMapper;
+import com.agencyamazon.model.Role;
 import com.agencyamazon.model.User;
+import com.agencyamazon.repository.RoleRepository;
 import com.agencyamazon.repository.UserRepository;
 import com.agencyamazon.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
     private final UserMapper userMapper;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserResponseDto register(UserRegistrationRequestDto requestDto)
@@ -27,6 +34,12 @@ public class UserServiceImpl implements UserService {
             );
         }
 
-        return null;
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+
+        Role defaultRole = roleRepository.findByRoleName(Role.RoleName.USER);
+        user.setRoles(Set.of(defaultRole));
+
+        return userMapper.toDto(userRepository.save(user));
     }
 }
