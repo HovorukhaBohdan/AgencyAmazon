@@ -4,7 +4,6 @@ import com.agencyamazon.model.Role;
 import com.agencyamazon.repository.RoleRepository;
 import com.github.cloudyrock.mongock.ChangeLog;
 import com.github.cloudyrock.mongock.ChangeSet;
-
 import java.util.ArrayList;
 import java.util.List;
 

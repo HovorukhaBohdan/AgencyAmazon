@@ -9,11 +9,10 @@ import com.agencyamazon.model.User;
 import com.agencyamazon.repository.RoleRepository;
 import com.agencyamazon.repository.UserRepository;
 import com.agencyamazon.service.UserService;
+import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
