@@ -1,4 +1,4 @@
-package com.agencyamazon.dto.external.salesAndTrafficByAsin;
+package com.agencyamazon.dto.external.asin;
 
 import com.agencyamazon.dto.external.common.OrderedProductSales;
 import com.agencyamazon.dto.external.common.OrderedProductSalesB2B;

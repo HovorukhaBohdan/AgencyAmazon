@@ -1,4 +1,4 @@
-package com.agencyamazon.dto.external.reportSpecification;
+package com.agencyamazon.dto.external.specification;
 
 import lombok.Data;
 

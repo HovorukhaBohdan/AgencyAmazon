@@ -1,8 +1,7 @@
 package com.agencyamazon.dto.external.common;
 
-import lombok.Data;
-
 import java.math.BigDecimal;
+import lombok.Data;
 
 @Data
 public class OrderedProductSalesB2B {

@@ -1,4 +1,4 @@
-package com.agencyamazon.dto.external.salesAndTrafficByDate.salesByDate;
+package com.agencyamazon.dto.external.date.sales;
 
 import com.agencyamazon.dto.external.common.OrderedProductSales;
 import com.agencyamazon.dto.external.common.OrderedProductSalesB2B;

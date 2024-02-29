@@ -1,4 +1,4 @@
-package com.agencyamazon.dto.external.salesAndTrafficByAsin;
+package com.agencyamazon.dto.external.asin;
 
 import lombok.Data;
 

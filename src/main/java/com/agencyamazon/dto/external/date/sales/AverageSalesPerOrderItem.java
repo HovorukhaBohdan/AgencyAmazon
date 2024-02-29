@@ -1,8 +1,7 @@
-package com.agencyamazon.dto.external.salesAndTrafficByDate.salesByDate;
-
-import lombok.Data;
+package com.agencyamazon.dto.external.date.sales;
 
 import java.math.BigDecimal;
+import lombok.Data;
 
 @Data
 public class AverageSalesPerOrderItem {

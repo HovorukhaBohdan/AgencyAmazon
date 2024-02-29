@@ -1,7 +1,7 @@
 package com.agencyamazon.mapper;
 
 import com.agencyamazon.config.MapperConfig;
-import com.agencyamazon.dto.external.salesAndTrafficByDate.SalesAndTrafficByDateExternalDto;
+import com.agencyamazon.dto.external.date.SalesAndTrafficByDateExternalDto;
 import com.agencyamazon.dto.internal.SalesAndTrafficByDateDto;
 import com.agencyamazon.model.SalesAndTrafficByDate;
 import org.mapstruct.Mapper;

@@ -1,7 +1,7 @@
 package com.agencyamazon.dto.internal;
 
-import com.agencyamazon.dto.external.salesAndTrafficByAsin.SalesByAsin;
-import com.agencyamazon.dto.external.salesAndTrafficByAsin.TrafficByAsin;
+import com.agencyamazon.dto.external.asin.SalesByAsin;
+import com.agencyamazon.dto.external.asin.TrafficByAsin;
 import lombok.Data;
 
 @Data

@@ -1,16 +1,14 @@
-package com.agencyamazon.dbInitializer;
+package com.agencyamazon.initializer;
 
 import com.agencyamazon.dto.external.ReportInfoDto;
 import com.agencyamazon.mapper.AsinReportMapper;
 import com.agencyamazon.mapper.DateReportMapper;
-import com.agencyamazon.repository.DateReportsRepository;
 import com.agencyamazon.repository.AsinReportsRepository;
+import com.agencyamazon.repository.DateReportsRepository;
 import com.agencyamazon.service.FileReaderService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
 
 @Component
 @RequiredArgsConstructor
@@ -23,7 +21,7 @@ public class DatabaseInitializer {
     private final DateReportMapper dateReportMapper;
 
     @PostConstruct
-    private void initialize() throws IOException {
+    private void initialize() {
         ReportInfoDto report = fileReaderService.readFile(filePath);
         asinRepository.saveAll(report.getSalesAndTrafficByAsin().stream()
                 .map(asinReportMapper::toModel)

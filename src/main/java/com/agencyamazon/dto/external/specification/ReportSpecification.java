@@ -1,10 +1,8 @@
-package com.agencyamazon.dto.external.reportSpecification;
-
-import com.agencyamazon.dto.external.reportSpecification.ReportOptions;
-import lombok.Data;
+package com.agencyamazon.dto.external.specification;
 
 import java.time.LocalDate;
 import java.util.List;
+import lombok.Data;
 
 @Data
 public class ReportSpecification {

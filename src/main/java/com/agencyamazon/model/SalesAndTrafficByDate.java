@@ -1,7 +1,7 @@
 package com.agencyamazon.model;
 
-import com.agencyamazon.dto.external.salesAndTrafficByDate.salesByDate.SalesByDate;
-import com.agencyamazon.dto.external.salesAndTrafficByDate.trafficByDate.TrafficByDate;
+import com.agencyamazon.dto.external.date.sales.SalesByDate;
+import com.agencyamazon.dto.external.date.traffic.TrafficByDate;
 import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;

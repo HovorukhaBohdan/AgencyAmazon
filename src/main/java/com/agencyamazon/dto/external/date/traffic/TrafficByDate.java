@@ -1,4 +1,4 @@
-package com.agencyamazon.dto.external.salesAndTrafficByDate.trafficByDate;
+package com.agencyamazon.dto.external.date.traffic;
 
 import lombok.Data;
 
