@@ -1,6 +1,7 @@
 package com.agencyamazon.service.impl;
 
 import com.agencyamazon.dto.internal.SalesAndTrafficByDateDto;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -10,17 +11,18 @@ import com.agencyamazon.model.SalesAndTrafficByDate;
 import com.agencyamazon.repository.DateReportsRepository;
 import com.agencyamazon.service.DateReportService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class DateReportServiceImpl implements DateReportService {
-    private final DateReportsRepository dateRepository;
+    private final DateReportsRepository dateReportsRepository;
     private final DateReportMapper dateReportMapper;
 
     @Override
     public SalesAndTrafficByDateDto getByDate(LocalDate date) {
-        SalesAndTrafficByDate report = dateRepository.findByDate(date).orElseThrow(
+        SalesAndTrafficByDate report = dateReportsRepository.findByDate(date).orElseThrow(
                 () -> new EntityNotFoundException("Can't get report by date: " + date)
         );
 
@@ -29,7 +31,14 @@ public class DateReportServiceImpl implements DateReportService {
 
     @Override
     public List<SalesAndTrafficByDateDto> getByDateBetween(LocalDate dateFrom, LocalDate dateTo) {
-        return dateRepository.findAllByDateBetween(dateFrom, dateTo).stream()
+        return dateReportsRepository.findAllByDateBetween(dateFrom, dateTo).stream()
+                .map(dateReportMapper::toDto)
+                .toList();
+    }
+
+    @Override
+    public List<SalesAndTrafficByDateDto> getAll(Pageable pageable) {
+        return dateReportsRepository.findAll(pageable).stream()
                 .map(dateReportMapper::toDto)
                 .toList();
     }
