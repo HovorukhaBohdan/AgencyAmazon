@@ -7,14 +7,15 @@ import java.util.List;
 import com.agencyamazon.exception.EntityNotFoundException;
 import com.agencyamazon.mapper.DateReportMapper;
 import com.agencyamazon.model.SalesAndTrafficByDate;
-import com.agencyamazon.repository.DateRepository;
+import com.agencyamazon.repository.DateReportsRepository;
+import com.agencyamazon.service.DateReportService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class DateReportServiceImpl implements DateReportService {
-    private final DateRepository dateRepository;
+    private final DateReportsRepository dateRepository;
     private final DateReportMapper dateReportMapper;
 
     @Override

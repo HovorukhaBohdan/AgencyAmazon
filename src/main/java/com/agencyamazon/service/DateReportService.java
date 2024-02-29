@@ -1,4 +1,4 @@
-package com.agencyamazon.service.impl;
+package com.agencyamazon.service;
 
 import com.agencyamazon.dto.internal.SalesAndTrafficByDateDto;
 import java.time.LocalDate;

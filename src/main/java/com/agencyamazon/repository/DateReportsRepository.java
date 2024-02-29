@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface DateRepository
+public interface DateReportsRepository
         extends MongoRepository<SalesAndTrafficByDate, String> {
     Optional<SalesAndTrafficByDate> findByDate(LocalDate date);
 

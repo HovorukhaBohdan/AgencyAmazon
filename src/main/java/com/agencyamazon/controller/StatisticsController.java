@@ -1,7 +1,9 @@
 package com.agencyamazon.controller;
 
+import com.agencyamazon.dto.internal.SalesAndTrafficByAsinDto;
 import com.agencyamazon.dto.internal.SalesAndTrafficByDateDto;
-import com.agencyamazon.service.impl.DateReportService;
+import com.agencyamazon.service.AsinReportService;
+import com.agencyamazon.service.DateReportService;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -17,9 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class StatisticsController {
     private final DateReportService dateReportService;
+    private final AsinReportService asinReportsService;
 
     @GetMapping("/by-date")
-    public SalesAndTrafficByDateDto getAllReportsByDate(
+    public SalesAndTrafficByDateDto getReportByDate(
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date
     ) {
         return dateReportService.getByDate(date);
@@ -33,5 +36,12 @@ public class StatisticsController {
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateTo
     ) {
         return dateReportService.getByDateBetween(dateFrom, dateTo);
+    }
+
+    @GetMapping("by-asin")
+    public List<SalesAndTrafficByAsinDto> getReportsByAsin(
+            @RequestParam("asins") List<String> asins
+    ) {
+        return asinReportsService.getReportsByAsin(asins);
     }
 }
